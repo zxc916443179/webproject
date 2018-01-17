@@ -1,9 +1,8 @@
 # project
 
 > A Vue.js project
-
+>> A great web framework for light weight web project
 ## Build Setup
-
 ``` bash
 # install dependencies
 npm install
