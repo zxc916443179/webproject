@@ -1,7 +1,10 @@
 import axios from 'axios'
 import shared from './shared'
 axios.defaults.withCredentials = true
-let ServerBase = 'http://localhost:8080/springboot'
+let ServerBase = '/springboot'
+if (process.env.NODE_ENV === 'development') {
+  ServerBase = 'http://localhost:8080/springboot'
+}
 export { ServerBase }
 
 class ServiceError extends Error {
