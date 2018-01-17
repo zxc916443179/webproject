@@ -308,6 +308,7 @@ export default class UserManage extends Vue {
       this.$message({
         message: '删除成功', type: 'success'
       })
+      this.deleteForm = []
     }).catch(() => {
       this.$message({
         message: '已取消删除', type: 'info'
