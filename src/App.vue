@@ -20,10 +20,9 @@ import HeaderBar from '@/components/shared/HeaderBar'
 export default class App extends Vue {
   name = 'app'
   async mounted () {
-    // setInterval(async () => {
-    //   if (shared.isLogin === true) await Login.testLogin(this)
-    // }, 3000)
-    // 上线以后再用
+    setInterval(async () => {
+      if (shared.isLogin === true) await Login.testLogin(this)
+    }, 3000)
   }
 }
 </script>
