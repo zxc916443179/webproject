@@ -10,12 +10,12 @@
         @open="handleOpen()"
         @close="handleClose()"
         >
-        <el-badge>
+        <!-- <el-badge>
           <el-menu-item index = '/centralManager/gearStatus'>
             <i class="el-icon-menu"></i>
             <span>装备动态汇总</span>
           </el-menu-item>
-        </el-badge>
+        </el-badge> -->
         <el-badge :value="min(count, tscount)">
           <el-menu-item index = '/centralManager/materialApplyList'>
             <i class="el-icon-menu"></i>
