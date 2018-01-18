@@ -197,7 +197,7 @@ export default class HeaderBar extends Vue {
       })
     } else {
       try {
-        await User.updatePass(this, shared.id, this.passData.news)
+        await User.updatePass(this, shared.id, this.passData.old, this.passData.news)
         this.$message({
           message: '修改成功', type: 'success'
         })

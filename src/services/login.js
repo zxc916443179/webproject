@@ -44,10 +44,10 @@ export class User {
       handleException(error)
     }
   }
-  static async updatePass (__this, id, password) {
+  static async updatePass (__this, id, old, password) {
     try {
       let ret = await apiCall('/user/updatePass', {
-        id, password
+        id, old, password
       })
       return ret
     } catch (error) {
