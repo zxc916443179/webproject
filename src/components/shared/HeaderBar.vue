@@ -185,6 +185,12 @@ export default class HeaderBar extends Vue {
     }
   }
   async onPassCommit () {
+    if (this.passData.old === '') {
+      this.$message({
+        message: '请输入旧密码', type: 'warning'
+      })
+      return
+    }
     if (this.passData.new !== this.passData.news) {
       this.$message({
         message: '两次密码输入不同',
