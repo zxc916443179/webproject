@@ -29,7 +29,7 @@ export class Login {
       await apiCall('/testLogin', {})
     } catch (e) {
       if (e.code === 101) shared.isLogin = false
-      handleException(this, e)
+      handleException(__this, e)
     }
   }
 }
@@ -41,7 +41,7 @@ export class User {
       })
       return ret
     } catch (error) {
-      handleException(error)
+      handleException(__this, error)
     }
   }
   static async updatePass (__this, id, old, password) {
