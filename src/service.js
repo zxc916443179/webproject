@@ -57,8 +57,6 @@ export async function apiCall (path, data = {}) {
       }
       throw new APIError(data.msg, data.code)
     }
-  } else if (res.status === 199) {
-    throw new APIError('未登录或登录已超时', 101)
   } else {
     throw new ServiceError('网络或服务器出错', res.status)
   }
