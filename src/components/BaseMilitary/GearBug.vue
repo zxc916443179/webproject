@@ -129,7 +129,7 @@
           </el-form-item>
           <el-form-item>
             <span>图片上传</span>
-            <el-upload ref="upload" class="upload-demo" drag multiple :auto-upload="false" action="http://localhost:8080/springboot/upload">
+            <el-upload ref="upload" class="upload-demo" drag multiple :auto-upload="false" :action="serverBase + '/upload'">
               <i class="el-icon-upload"></i>
                 <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
                 <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
@@ -151,6 +151,7 @@ import Vue from 'vue'
 import RightNav from '@/components/BaseMilitary/RightNav'
 import { Gear } from '../../services/materialAndGear'
 import shared from '@/shared'
+import { ServerBase } from '@/service'
 @Component({
   components: {
     RightNav
@@ -158,6 +159,7 @@ import shared from '@/shared'
 })
 export default class GearBug extends Vue {
   bugVisible = false
+  serverBase = ServerBase
   loading = true
   bugForm = {
     unit: shared.unit, longingUnit: shared.longingUnit, type: '', number: '', bug: '', needs: '', means: '', fixUnit: '', sponsor: '', tel: ''

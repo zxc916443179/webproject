@@ -125,7 +125,7 @@
           </el-form-item>
           <el-form-item>
             <span>图片上传</span>
-            <el-upload ref="upload" class="upload-demo" drag multiple :auto-upload="false" action="http://localhost:8080/springboot/upload">
+            <el-upload ref="upload" class="upload-demo" drag multiple :auto-upload="false" :action="serverBase + '/upload'">
               <i class="el-icon-upload"></i>
                 <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
                 <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
@@ -146,6 +146,7 @@ import Component from 'vue-class-component'
 import LeftNav from './LeftNav'
 import { MaterialCatalog, Material } from '@/services/materialAndGear'
 import Vue from 'vue'
+import { ServerBase } from '@/service'
 @Component({
   components: {
     LeftNav
@@ -162,6 +163,7 @@ export default class MaterialInfo extends Vue {
   updateForm = {}
   tableData = []
   loading = false
+  serverBase = ServerBase
   deleteForm = []
   async init () {
     this.addMaterialVisible = false
