@@ -49,9 +49,13 @@ export class User {
       let ret = await apiCall('/user/updatePass', {
         id, old, password
       })
+      __this.passVisible = false
+      __this.$message({
+        message: '修改成功', type: 'success'
+      })
       return ret
     } catch (error) {
-      handleException(error)
+      handleException(__this, error)
     }
   }
   static async findRecordsBy (__this, type, value) {

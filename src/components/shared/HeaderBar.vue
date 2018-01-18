@@ -202,16 +202,7 @@ export default class HeaderBar extends Vue {
         type: 'warning'
       })
     } else {
-      try {
-        await User.updatePass(this, shared.id, this.passData.old, this.passData.news)
-        this.$message({
-          message: '修改成功', type: 'success'
-        })
-      } catch (e) {
-        this.$alert(e)
-      } finally {
-        this.passVisible = false
-      }
+      await User.updatePass(this, shared.id, this.passData.old, this.passData.news)
     }
   }
   async openPass () {
