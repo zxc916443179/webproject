@@ -10,8 +10,8 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 import HeaderBar from '@/components/shared/HeaderBar'
-// import shared from '@/shared'
-// import { Login } from '@/services/login'
+import shared from '@/shared'
+import { Login } from '@/services/login'
 @Component({
   components: {
     HeaderBar
