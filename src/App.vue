@@ -22,7 +22,7 @@ export default class App extends Vue {
   async mounted () {
     setInterval(async () => {
       if (shared.isLogin === true) await Login.testLogin(this)
-    }, 3000)
+    }, 3000 * 20)
   }
 }
 </script>
