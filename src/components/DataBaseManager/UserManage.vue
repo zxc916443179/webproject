@@ -219,7 +219,7 @@ export default class UserManage extends Vue {
       let user = element.user
       let tid = i - '0' + 1
       this.ids.push(element.id)
-      let r = await User.getRole(this, element.id)
+      let r = await User.getRole(this, user.id)
       element.role = r.role
       this.tableData.push({
         role: element.role, id: user.id, gender: user.gender, age: user.age, tel: user.tel, realName: user.realName, email: user.email, job: element.job, tid: tid, account: user.userAuth, unit: element.unit.name, post: element.post
@@ -288,7 +288,6 @@ export default class UserManage extends Vue {
     this.addUserVisible = false
     await this.init()
     this.loading = true
-    this.getUsers(this, this.currentUnit)
     this.loading = false
   }
   async deleteUser () {
