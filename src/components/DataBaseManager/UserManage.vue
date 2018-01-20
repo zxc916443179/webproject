@@ -282,13 +282,12 @@ export default class UserManage extends Vue {
       })
       return
     }
-    await User.addUser(this, this.addForm).then(() => {
-      this.addUserVisible = false
-      this.init()
-      this.loading = true
-      this.getUsers(this, this.currentUnit)
-      this.loading = false
-    })
+    await User.addUser(this, this.addForm)
+    this.addUserVisible = false
+    await this.init()
+    this.loading = true
+    this.getUsers(this, this.currentUnit)
+    this.loading = false
   }
   async deleteUser () {
     if (this.deleteForm.length === 0) {
