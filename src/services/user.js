@@ -11,9 +11,18 @@ export class User {
       handleException(__this, error)
     }
   }
-  static async getRole (__this) {
+  static async getRoles (__this) {
     try {
       return await apiCall('/user/getRoles', {})
+    } catch (error) {
+      handleException(__this, error)
+    }
+  }
+  static async getRole (__this, id) {
+    try {
+      return await apiCall('/user/getRole', {
+        id
+      })
     } catch (error) {
       handleException(__this, error)
     }

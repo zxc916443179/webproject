@@ -219,8 +219,10 @@ export default class UserManage extends Vue {
       let user = element.user
       let tid = i - '0' + 1
       this.ids.push(element.id)
+      let r = await User.getRole(this, element.id)
+      element.role = r.role
       this.tableData.push({
-        id: user.id, gender: user.gender, age: user.age, tel: user.tel, realName: user.realName, email: user.email, job: element.job, tid: tid, account: user.userAuth, role: user.role.role, unit: element.unit.name, post: element.post
+        role: element.role, id: user.id, gender: user.gender, age: user.age, tel: user.tel, realName: user.realName, email: user.email, job: element.job, tid: tid, account: user.userAuth, unit: element.unit.name, post: element.post
       })
     }
   }
@@ -257,7 +259,7 @@ export default class UserManage extends Vue {
     this.deleteForm = []
     this.addForm = {}
     this.addUserVisible = false
-    this.roles = await User.getRole(this)
+    this.roles = await User.getRoles(this)
     if (this.currentUnit !== '') {
       await this.getUsers()
     }
